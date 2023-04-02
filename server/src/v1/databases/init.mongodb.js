@@ -1,8 +1,10 @@
 const mongoose = require('mongoose')
 
 //connect mongoose
-mongoose.connect( process.env.MONGO_URI).then( _ => console.log('Connected mongoose success!...'))
+
+mongoose.connect(process.env.MONGO_URL).then( _ => console.log('Connected mongoose success!...'))
 .catch( err => console.error(`Error: connect:::`, err))
+
 
 // all executed methods log output to console
 mongoose.set('debug', true)

@@ -1,27 +1,24 @@
 const express = require('express');
 const router = express.Router();
+const {send} = require('../services/Queuemsg')
+const { waitForVariable } = require('../controller/user.Controller')
 
 
 
 
-router.get('/update',(req,res)=>{
-    const mssv =  Number(req.query.mssv)
+var resdata = 'xxx'
+
+
+
+
+router.get('/update',async(req,res)=>{
+    const mssv =  req.query.mssv
+    send(process.env.NAME_QUEUE,mssv)
+    waitForVariable(resdata)
     
-  
-
-
-    return res.status(200).json(mssv)
+    
+    return res.status(200).json(resdata)
 })
-router.post('/update', (req, res) => {
-    const {data} = req.body
 
-
-
-
-
-
-
-    return res.status(200).json('succsess')
-})
 
 module.exports = router;

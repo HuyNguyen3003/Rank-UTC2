@@ -6,7 +6,7 @@ const compression = require('compression')
 const cors = require('cors')
 
 //init dbs 
- //require('./v1/databases/init.mongodb')
+ require('./v1/databases/init.mongodb')
  //require('./v1/databases/init.redis')
 
 

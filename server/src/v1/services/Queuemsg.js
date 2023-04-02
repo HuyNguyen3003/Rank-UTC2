@@ -4,7 +4,7 @@ const urlamq = process.env.RABBITMQ_URL
 
 module.exports.send = async (nameQueue, msg) => {
 
-   
+
     try {
         const connection = await amqplib.connect(urlamq)
         const channel = await connection.createChannel()
@@ -50,4 +50,3 @@ module.exports.get = async (nameQueue) => {
         console.log(`Error! Failed to connect to RabbitMQ: `, err)
     }
 }
-
