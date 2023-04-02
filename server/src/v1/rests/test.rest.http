@@ -1,0 +1,6 @@
+@urlDev=http://localhost:5000
+
+### checkStatus
+
+GET {{urlDev}}/apiV1/check
+
