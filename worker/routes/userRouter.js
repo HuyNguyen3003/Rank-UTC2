@@ -12,13 +12,27 @@ var resdata = 'xxx'
 
 
 router.get('/update',async(req,res)=>{
+
+    // client dùng api :5000/update để gửi yêu cầu tới services phụ
     const mssv =  req.query.mssv
-    send(process.env.NAME_QUEUE,mssv)
-    waitForVariable(resdata)
     
+    ///  send msg vào rabbitmq để gửi tới services chính
+    send(process.env.NAME_QUEUE,mssv)
+
+    //
+
+    // chờ nhận data từ services chính thông qua mesqueue rồi return
+   
+    //
     
     return res.status(200).json(resdata)
 })
+
+//
+
+
+
+
 
 
 module.exports = router;

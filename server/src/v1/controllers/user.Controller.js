@@ -1,6 +1,8 @@
 
 const amqplib = require('amqplib')
 const axios = require('axios')
+//const { getStudentInfo } = require('../services/read.service')
+
 
 
 
@@ -25,13 +27,12 @@ const handleFlow = async (nameQueue) => {
 
             // call api get data
 
-            // handle data
 
 
             //
             if (msgMssv){
                 try {
-                    // post data -> worker
+                    //  data -> client
                     
 
                 } catch (error) {
